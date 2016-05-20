@@ -35,7 +35,17 @@ Les champs marqués d'un * sont obligatoires
 </div>
 
 <div class="form-group">
-	<input type="email" class="form-control" id="email" name="email" placeholder="EMAIL*..." value="">
+	<input type="email" class="form-control" id="email" name="email" placeholder="mon email*..." value="">
+</div>
+
+
+<div class="form-group">
+	Mot de passe 
+	<input type="password" class="form-control" id="password1" name="password1"  value="">
+</div>
+<div class="form-group">
+	Répéter le mot de passe
+	<input type="password" class="form-control" id="password2" name="password2" value="">
 </div>
 
 <div class="form-group">
