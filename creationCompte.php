@@ -25,27 +25,27 @@ include_once 'connexion.php';
  
 <!-- formulaire d'inscription -->
 
-<form class="form-horizontal" method="post" action="#">
+<form class="form-horizontal" method="post" action="traitementCreationCompte.php">
 Les champs marqués d'un * sont obligatoires
 <div class="form-group">
-		<input type="text" class="form-control" id="firstname" name="firstname" placeholder="Prénom*..." value="">
+		<input type="text" class="form-control" id="firstname" name="firstname" placeholder="Prénom*..." value="" required>
 </div>	
 <div class="form-group">
-	<input type="text" class="form-control" id="name" name="name" placeholder="Nom*..." value="">
+	<input type="text" class="form-control" id="name" name="name" placeholder="Nom*..." value="" required>
 </div>
 
 <div class="form-group">
-	<input type="email" class="form-control" id="email" name="email" placeholder="mon email*..." value="">
+	<input type="email" class="form-control" id="email" name="email" placeholder="mon email*..." value="" required>
 </div>
 
 
 <div class="form-group">
 	Mot de passe 
-	<input type="password" class="form-control" id="password1" name="password1"  value="">
+	<input type="password" class="form-control" id="password1" name="password1"  value="" required>
 </div>
 <div class="form-group">
-	Répéter le mot de passe
-	<input type="password" class="form-control" id="password2" name="password2" value="">
+	Répétez le mot de passe
+	<input type="password" class="form-control" id="passwordVerif" name="passwordVerif" value="" required>
 </div>
 
 <div class="form-group">
@@ -53,7 +53,7 @@ Les champs marqués d'un * sont obligatoires
 </div>
 
 <div class="form-group">
-<textarea class="form-control" rows="4" name="message" placeholder="MESSAGE..."></textarea>
+	<textarea class="form-control" rows="4" name="message" placeholder="MESSAGE..."></textarea>
 </div>
 
 <?php

@@ -9,6 +9,8 @@ if($IP=='127.0.0.1'){
 		$db=new PDO('mysql:host=localhost;dbname=u154204657_jojol', 'u154204657_root', 'Alpha270');
 	}else{
 		echo('IP :'.$IP);
-	}
+}
+// affichage des message d'erreur sql
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
 ?>
