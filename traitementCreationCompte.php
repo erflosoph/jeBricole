@@ -41,7 +41,7 @@ if(preg_match("/[a-zA-Záàâäãåçéèêëíìîïñóòôöõúùûüýÿ\-]
 
 // Prenom
 $_POST['firstname'] = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
-if(preg_match("/[a-zA-Záàâäãåçéèêëíìîïñóòôöõúùûüýÿ\-]/", $_POST['name'])!==1){
+if(preg_match("/[a-zA-Záàâäãåçéèêëíìîïñóòôöõúùûüýÿ\-]/", $_POST['firstname'])!==1){
 	$message.='<br />Ce n\'est pas un prénom  valide.';
 	$fail=1;
 }
