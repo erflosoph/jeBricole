@@ -7,6 +7,27 @@ include_once 'templateGauche.php';
 include_once 'connexion.php';
 ?>
 
+
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<!-- vérification de l'unicité de l'adresse mail en utilisant un appel ajax -->
+<script>
+  $(function() {
+    $('#email').change(function() {
+    	var emailSoumis = $('#email').val();
+    	$.post('traiteFormulaire.php', { email: emailSoumis},function(data) {
+	    	if(data!=''){
+	        	alert(data);
+	        	var fail=1;
+	    	}
+    	});
+    });
+  });
+</script>
+
+
 <body class="contact-page">
 <div class="content-main contact-content">
 <div class="contact-content-upper">
@@ -26,41 +47,43 @@ include_once 'connexion.php';
 <!-- formulaire d'inscription -->
 
 <form class="form-horizontal" method="post" action="traitementCreationCompte.php">
-Les champs marqués d'un * sont obligatoires
-<div class="form-group">
-		<input type="text" class="form-control" id="firstname" name="firstname" placeholder="Prénom*..." value="" required>
-</div>	
-<div class="form-group">
-	<input type="text" class="form-control" id="name" name="name" placeholder="Nom*..." value="" required>
-</div>
+	Les champs marqués d'un * sont obligatoires
+	<div class="form-group">
+			<input type="text" class="form-control" id="firstname" name="firstname" placeholder="Prénom*..." value="" required>
+	</div>	
+	<div class="form-group">
+		<input type="text" class="form-control" id="name" name="name" placeholder="Nom*..." value="" required>
+	</div>
+	
+	<div class="form-group">
+		<input type="email" class="form-control" id="email" name="email" placeholder="mon email*..." value="" required>
+	</div>
+	
+	
+	<div class="form-group">
+		Mot de passe 
+		<input type="password" class="form-control" id="password1" name="password1"  value="" required>
+	</div>
+	<div class="form-group">
+		Répétez le mot de passe
+		<input type="password" class="form-control" id="passwordVerif" name="passwordVerif" value="" required>
+	</div>
+	
+	<div class="form-group">
+		<input type="text" class="form-control" id="interet" name="interet" placeholder="Centre d'interet..." value="">
+	</div>
+	
+	<div class="form-group">
+		<textarea class="form-control" rows="4" name="message" placeholder="MESSAGE..."></textarea>
+	</div>
+	
+	 
 
-<div class="form-group">
-	<input type="email" class="form-control" id="email" name="email" placeholder="mon email*..." value="" required>
-</div>
-
-
-<div class="form-group">
-	Mot de passe 
-	<input type="password" class="form-control" id="password1" name="password1"  value="" required>
-</div>
-<div class="form-group">
-	Répétez le mot de passe
-	<input type="password" class="form-control" id="passwordVerif" name="passwordVerif" value="" required>
-</div>
-
-<div class="form-group">
-	<input type="text" class="form-control" id="interet" name="interet" placeholder="Centre d'interet..." value="">
-</div>
-
-<div class="form-group">
-	<textarea class="form-control" rows="4" name="message" placeholder="MESSAGE..."></textarea>
-</div>
-
-<?php
-echo('<div class="form-group">');
-echo('<input id="submit" name="submit" type="submit" value="Send" class="btn view_more btn-submit">');
-echo('</div>');
-?>
+	<?php
+	echo('<div class="form-group">');
+ 	echo('<input id="submit" name="submit" type="submit" value="Send" class="btn view_more btn-submit">');
+	echo('</div>');
+	?>
 </form>
 
 </div> <!-- .contact-left -->
@@ -101,6 +124,9 @@ echo('</div>');
 
 <script src="js/jquery-1.11.3.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+
+
+<!-- <script src="jquery.js"></script> -->
 
 	</body>
 	</html>
