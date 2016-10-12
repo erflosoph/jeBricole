@@ -7,7 +7,7 @@ if($IP=='127.0.0.1'){
 		//echo('<p>IP n2 : '.$IP.'</p>');
 		$db=new PDO('mysql:host=localhost;dbname=jojolabidouille','root','') or die ("erreur de connexio nau serveur BDD");
 				
-	}elseif($IP=='31.220.16.42'){
+	}elseif($IP=='31.170.165.226'){
 		$db=new PDO('mysql:host=localhost;dbname=u571462442_jojol', 'u571462442_root', 'Alpha270');
 	}else{
 		echo('IP :'.$IP);
