@@ -4,15 +4,13 @@ include_once 'templateHaut.php';
 // bandeau de gauche
 include_once 'templateGauche.php';
 // connexion BDD
-include_once 'connexion.php';
+require 'connexion.php';
 ?>
 
 
 
 <script src="js/jquery-1.11.3.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-
-<!-- vérification de l'unicité de l'adresse mail en utilisant un appel ajax -->
 <script>
   $(function() {
     $('#email').change(function() {
@@ -21,60 +19,65 @@ include_once 'connexion.php';
 	    	if(data!=''){
 	        	alert(data);
 	        	var fail=1;
+				document.getElementById("avertissement").innerHTML='Cette adresse email est déjà enregistrée. <br />Veuillez en choisir une autre.';
+				
 	    	}
     	});
     });
   });
 </script>
 
+</head>
+
 
 <body class="contact-page">
 <div class="content-main contact-content">
-<div class="contact-content-upper">
-<div class="row">
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-<div class="gallery_title">
-<h3>jeBricole</h3>
-<h4>Création de compte</h4>
-</div>
-</div>
-</div>
+	<div class="contact-content-upper">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="gallery_title">
+					<h3>jeBricole</h3>
+					<h4>Création de compte</h4>
+				</div>
+			</div>
+		</div>
  
-<div class="row">
-<div class="col-sm-12 col-md-6 contact_left">
+		<div class="row">
+			<div class="col-sm-12 col-md-6 contact_left">
 
- 
+ <!-- vérification de l'unicité de l'adresse mail en utilisant un appel ajax -->
+
 <!-- formulaire d'inscription -->
 
-<form class="form-horizontal" method="post" action="traitementCreationCompte.php">
-	Les champs marqués d'un * sont obligatoires
-	<div class="form-group">
-			<input type="text" class="form-control" id="firstname" name="firstname" placeholder="Prénom*..." value="" required>
-	</div>	
-	<div class="form-group">
-		<input type="text" class="form-control" id="name" name="name" placeholder="Nom*..." value="" required>
-	</div>
-	
-	<div class="form-group">
-		<input type="email" class="form-control" id="email" name="email" placeholder="mon email*..." value="" required>
-	</div>
-	
-	
-	<div class="form-group">
-		Mot de passe 
-		<input type="password" class="form-control" id="password1" name="password1"  value="" required>
-	</div>
-	<div class="form-group">
-		Répétez le mot de passe
-		<input type="password" class="form-control" id="passwordVerif" name="passwordVerif" value="" required>
-	</div>
-	
-	<div class="form-group">
-		<input type="text" class="form-control" id="interet" name="interet" placeholder="Centre d'interet..." value="">
-	</div>
-	
-	<div class="form-group">
-		<textarea class="form-control" rows="4" name="message" placeholder="MESSAGE..."></textarea>
+			<form class="form-horizontal" method="post" action="traitementCreationCompte.php">
+				Les champs marqués d'un * sont obligatoires
+				<div class="form-group">
+						<input type="text" class="form-control" id="firstname" name="firstname" placeholder="Prénom*..." value="" required>
+				</div>	
+				<div class="form-group">
+					<input type="text" class="form-control" id="name" name="name" placeholder="Nom*..." value="" required>
+				</div>
+				
+				<div class="form-group">
+					<input type="email" class="form-control" id="email" name="email" placeholder="mon email*..." value="" required>
+				</div>
+				
+				
+				<div class="form-group">
+					Mot de passe 
+					<input type="password" class="form-control" id="password1" name="password1"  value="" required>
+				</div>
+				<div class="form-group">
+					Répétez le mot de passe
+					<input type="password" class="form-control" id="passwordVerif" name="passwordVerif" value="" required>
+				</div>
+				
+				<div class="form-group">
+					<input type="text" class="form-control" id="interet" name="interet" placeholder="Centre d'interet..." value="">
+				</div>
+				
+				<div class="form-group">
+					<textarea class="form-control" rows="4" name="message" placeholder="MESSAGE..."></textarea>
 	</div>
 	
 	 
@@ -93,6 +96,8 @@ include_once 'connexion.php';
  
 	<div class="col-md-12 contact_text">
 	Votre inscription sera prise en compte par le webmaster pour qu'il la valide.
+	</div>
+	<div id="avertissement" class="col-md-12 contact_text  name="avertissement">
 	</div>
 
 

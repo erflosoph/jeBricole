@@ -2,10 +2,10 @@
 
 // recherche du serveur prod ou local
 $IP=$_SERVER['SERVER_ADDR'];
-echo('<p>IP : '.$IP.'</p>');
+//echo('<p>IP : '.$IP.'</p>');
 if($IP=='127.0.0.1'){
 		//echo('<p>IP n2 : '.$IP.'</p>');
-		$db=new PDO('mysql:host=localhost;dbname=jojolabidouille','root','') or die ("erreur de connexio nau serveur BDD");
+		$db=new PDO('mysql:host=localhost;dbname=jojolabidouille','root','') or die ("erreur de connexion nau serveur BDD");
 				
 	}elseif($IP=='31.170.165.226'){
 		$db=new PDO('mysql:host=localhost;dbname=u571462442_jojol', 'u571462442_root', 'Alpha270');
