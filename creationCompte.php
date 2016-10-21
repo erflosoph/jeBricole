@@ -16,12 +16,16 @@ require 'connexion.php';
     $('#email').change(function() {
     	var emailSoumis = $('#email').val();
     	$.post('traiteFormulaire.php', { email: emailSoumis},function(data) {
-	    	if(data!=''){
-	        	alert(data);
-	        	var fail=1;
-				document.getElementById("avertissement").innerHTML='Cette adresse email est déjà enregistrée. <br />Veuillez en choisir une autre.';
-				
-	    	}
+	    	if(data!=''){ // l'adresse mail existe déjà
+	        	//alert(data);
+	        	var fail_email=1;
+				document.getElementById("avertissement").innerHTML='Il existe déjà un utilisateur avec cette adresse.<br />Veuillez en choisir une autre.';
+				document.getElementById("email").focus();
+				document.getElementById("email").value="";
+	    	}else{ // elle n'existe pas
+				var fail_email=0;
+				document.getElementById("avertissement").innerHTML='';
+			}
     	});
     });
   });
@@ -58,10 +62,11 @@ require 'connexion.php';
 					<input type="text" class="form-control" id="name" name="name" placeholder="Nom*..." value="" required>
 				</div>
 				
+			
 				<div class="form-group">
 					<input type="email" class="form-control" id="email" name="email" placeholder="mon email*..." value="" required>
 				</div>
-				
+	
 				
 				<div class="form-group">
 					Mot de passe 
@@ -95,10 +100,12 @@ require 'connexion.php';
 
  
 	<div class="col-md-12 contact_text">
-	Votre inscription sera prise en compte par le webmaster pour qu'il la valide.
+		Votre inscription sera prise en compte par le webmaster pour qu'il la valide.
 	</div>
-	<div id="avertissement" class="col-md-12 contact_text  name="avertissement">
+	
+	<div id="avertissement" class="col-md-12 contact_text_error" name="avertissement">
 	</div>
+	
 
 
 </div> <!-- .contact_right -->
