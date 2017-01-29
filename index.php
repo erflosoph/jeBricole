@@ -16,7 +16,11 @@ $data=$qry->fetch();
 ?>
 
 
-<body>             
+<body> 
+<script type="text/javascript" charset="utf8" src="js/jquery.datatables.js"></script>
+
+
+            
 			<div class="content-main">
                         <div class="row margin-b-30">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -182,7 +186,7 @@ $data=$qry->fetch();
     <!-- JavaScript -->
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" charset="utf8" src="js/jquery.datatables.js"></script>
+	
 	<script>
 		
 		$('#monTableau').dataTable( {
