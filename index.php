@@ -17,7 +17,7 @@ $data=$qry->fetch();
 
 
 <body> 
-<script type="text/javascript" charset="utf8" src="js/jquery.datatables.js"></script>
+
 
 
             
@@ -186,7 +186,7 @@ $data=$qry->fetch();
     <!-- JavaScript -->
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-	
+	<script type="text/javascript" charset="utf8" src="js/jquery.datatables.js"></script>
 	<script>
 		
 		$('#monTableau').dataTable( {
