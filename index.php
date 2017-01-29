@@ -55,20 +55,50 @@ $data=$qry->fetch();
                                     </div>
                                     <div class="info float-container">
                                         <div class="col-sm-12 london-title">
-                                            <h3 class="text-uppercase">Proin gravida nibhvel</h3>
-                                            <h4 class="text-uppercase">mauris vitae erat</h4>
+                                            <h3 class="text-uppercase">test tableau HTML</h3>
+                                            <h4 class="text-uppercase">on va essayer Jquery pour l'affichage d'un tableau</h4>
                                         </div>
-                                        <p>Sean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. </p><hr />
-                                        <div class="col-sm-12 location-main"> 
-                                            <div class="pull-left location">
-                                                <i class="fa fa-map-marker fa-2x"></i><span>LONDON</span>
-                                            </div>
-                                            <div class="pull-right user-icons">
-                                                <a href="#"><i class="fa fa-star fa-2x"></i></a>
-                                                <a href="#"><i class="fa fa-user fa-2x"></i></a>
-                                                <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
-                                            </div>
-                                        </div>
+                                        <p>
+											<table id="monTableau" data-order='[[ 1, "asc" ]]' data-page-length='2'>
+												<thead>
+													<tr>
+														<th>Nom</th>
+														<th>Prénom</th>
+														<th>Age</th>
+														<th>Sexe</th>
+													</tr>
+												</thead>
+												
+												<tbody>
+													<tr>
+														<td>Maman</td>
+														<td>Ours</td>
+														<td>10 ans</td>
+														<td>F</td>
+													</tr>
+													<tr>
+														<td>Papa</td>
+														<td>Ours</td>
+														<td>11 ans</td>
+														<td>M</td>
+													</tr>
+													<tr>
+														<td>Fils</td>
+														<td>Ours</td>
+														<td>2 ans</td>
+														<td>M</td>
+													</tr>
+													<tr>
+														<td>Fille</td>
+														<td>Ours</td>
+														<td>3 ans</td>
+														<td>F</td>
+													</tr>
+												</tbody>
+											
+											</table>
+										</p>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -152,6 +182,23 @@ $data=$qry->fetch();
     <!-- JavaScript -->
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-
+	<script type="text/javascript" charset="utf8" src="js/jquery.datatables.js"></script>
+	<script>
+		$(document).ready( function () {
+			$('#monTableau').DataTable();
+			
+		} );
+		
+		// $('#monTableau').dataTable( {
+			// "scrollX": true
+		// } );
+		
+		$('#monTableau').dataTable( {
+		  "scrollY": "100px",
+		  "scrollCollapse": true,
+		  "paging": false
+		} );
+	</script>
+	
 </body>
 </html>
