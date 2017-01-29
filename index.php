@@ -184,14 +184,6 @@ $data=$qry->fetch();
     <script src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" charset="utf8" src="js/jquery.datatables.js"></script>
 	<script>
-		$(document).ready( function () {
-			$('#monTableau').DataTable();
-			
-		} );
-		
-		// $('#monTableau').dataTable( {
-			// "scrollX": true
-		// } );
 		
 		$('#monTableau').dataTable( {
 		  "scrollY": "100px",
