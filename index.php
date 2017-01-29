@@ -59,7 +59,7 @@ $data=$qry->fetch();
                                             <h4 class="text-uppercase">on va essayer Jquery pour l'affichage d'un tableau</h4>
                                         </div>
                                         <p>
-											<table id="monTableau" data-order='[[ 1, "asc" ]]' data-page-length='2'>
+											<table id="monTableau">
 												<thead>
 													<tr>
 														<th>Nom</th>
